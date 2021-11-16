@@ -30,3 +30,26 @@
 .code_pannel{
     background-color:aliceblue;
 }
+
+.copy_button{
+    background-color:darkgray;
+    border-radius: 20px;
+    text-align: left;
+    cursor: pointer;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-left: -2%;
+    transition: 0.5s;
+}
+
+.copy_button:hover{
+    background-color:gray;
+    transition: 0.5s;
+}
+
+.svg_code{
+    border-color: black;
+    border: 1px;
+    border-style: solid;
+    margin-top: 10px;
+}
