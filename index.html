@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <script src="js/main.js"></script>
+        <link href="./css/style.css" rel="stylesheet">
+        <title>Js Svg</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1 class="title">Svgのテスト</h1>
+        <div class="contents">
+            <div class="items slidebars">
+                <p><input class="value1" type="range" value="100" min="-100"/>
+                value:<span class="range-value-result1">100</span></p>
+
+                <p><input class="value2" type="range" value="0" min="-100"/>
+                value:<span class="range-value-result2">0</span></p>
+
+                <p><input class="value3" type="range" value="50" min="-100"/>
+                value:<span class="range-value-result3">50</span></p>
+
+                <p><input class="value4" type="range" value="50" min="-100"/>
+                value:<span class="range-value-result4">50</span></p>
+
+                <p><input class="value5" type="range" value="10" min="-100"/>
+                value:<span class="range-value-result5">10</span></p>
+
+                <p><input class="value6" type="range" value="50" min="-100"/>
+                value:<span class="range-value-result6">50</span></p>
+
+                <label>Fill：<input id="fill_color" type="text" oninput="inputChange()"></label>
+
+                <script>
+
+                    var range0 = 100;
+                    var range1 = 0;
+                    var range2 = 50;
+                    var range3 = 10;
+                    var range4 = 10;
+                    var range5 = 50;
+                
+                    function inputChange(){
+                    
+                    var fill_color = document.getElementById("fill_color");
+                    
+                    var svg = document.getElementById("svgimg");
+                    
+                    svg.setAttribute("stroke",fill_color.value);
+                    
+                    }
+                
+                    $("input[class='value1']").on("input", function (e) {
+                        var range = e.target;
+                        range0 = e.target.value;
+                        $(".range-value-result1").text(range.value);
+
+                        var code = "M" + range0 +" " + range1 + " q" + range2 + " " + range3 + " " + range4 + " " + range5;
+                    
+                        var svgimg = document.getElementById("svgimg");
+                        svgimg.setAttribute("d",code);
+                        
+                        var svg_code = document.getElementById("svg_code");
+                        svg_code.innerHTML = code;
+                    })
+                
+                    $("input[class='value2']").on("input", function (e) {
+                        var range = e.target;
+                        range1 = e.target.value;
+                        $(".range-value-result2").text(range.value);
+                    
+                        var code = "M" + range0 +" " + range1 + " q" + range2 + " " + range3 + " " + range4 + " " + range5;
+                    
+                        var svgimg = document.getElementById("svgimg");
+                        svgimg.setAttribute("d",code);
+                        
+                        var svg_code = document.getElementById("svg_code");
+                        svg_code.innerHTML = code;
+                    })
+                
+                    $("input[class='value3']").on("input", function (e) {
+                        var range = e.target;
+                        range2 = e.target.value;
+                        $(".range-value-result3").text(range.value);
+                    
+                        var code = "M" + range0 +" " + range1 + " q" + range2 + " " + range3 + " " + range4 + " " + range5;
+                    
+                        var svgimg = document.getElementById("svgimg");
+                        svgimg.setAttribute("d",code);
+                        
+                        var svg_code = document.getElementById("svg_code");
+                        svg_code.innerHTML = code;
+                    })
+                
+                    $("input[class='value4']").on("input", function (e) {
+                        var range = e.target;
+                        range3 = e.target.value;
+                        $(".range-value-result4").text(range.value);
+                    
+                        var code = "M" + range0 +" " + range1 + " q" + range2 + " " + range3 + " " + range4 + " " + range5;
+                    
+                        var svgimg = document.getElementById("svgimg");
+                        svgimg.setAttribute("d",code);
+                        
+                        var svg_code = document.getElementById("svg_code");
+                        svg_code.innerHTML = code;
+                    })
+                
+                    $("input[class='value5']").on("input", function (e) {
+                        var range = e.target;
+                        range4 = e.target.value;
+                        $(".range-value-result4").text(range.value);
+                    
+                        var code = "M" + range0 +" " + range1 + " q" + range2 + " " + range3 + " " + range4 + " " + range5;
+                    
+                        var svgimg = document.getElementById("svgimg");
+                        svgimg.setAttribute("d",code);
+                        
+                        var svg_code = document.getElementById("svg_code");
+                        svg_code.innerHTML = code;
+                    })
+                
+                    $("input[class='value6']").on("input", function (e) {
+                        var range = e.target;
+                        range5 = e.target.value;
+                        $(".range-value-result6").text(range.value);
+                    
+                        var code = "M" + range0 +" " + range1 + " q" + range2 + " " + range3 + " " + range4 + " " + range5;
+                    
+                        var svgimg = document.getElementById("svgimg");
+                        svgimg.setAttribute("d",code);
+                        
+                        var svg_code = document.getElementById("svg_code");
+                        svg_code.innerHTML = code;
+                    })
+                </script>
+
+            </div>
+
+            <div class="items svg_preview">
+                <svg id="svg_img" width="150%" height="150%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 134">
+                    <path id="svgimg" d="M100 0 q50 10 10 50" fill="none" stroke="#e74c3c"/>
+                </svg>
+            </div>
+
+
+            <div class="items code_pannel"><div class="pannel_label">Code:</div><div id="svg_code">Default</div></div>
+        </div>
+    </body>
+</html>
+
+<!-- 移動(Move Toコマンド)
+M x y
+m dx dy
+
+線を描画(Line Toコマンド)
+L x y
+l dx dy
+
+水平線を描画
+H x
+h dx
+
+垂直線を描画
+V y
+v dy
+
+Close Pathコマンド パスを閉じる
+Z
+z
+
+三次ベジェ曲線
+C x1 y1, x2 y2, x y // x,yは線の終点　x1,y1は曲線の始点向けの制御点　x2,y2は曲線の終点向けの制御点
+c dx1 dy1, dx2 dy2, dx dy
+
+三次ベジェ曲線のセットをつなぎ合わせるためのショートカット
+S x2 y2, x y
+s dx2 dy2, dx dy
+
+二次ベジェ曲線
+Q x1 y1, x y
+q dx1 dy1, dx dy
+
+二次ベジェ曲線のセットをつなぎ合わせるためのショートカット
+T x y
+t dx dy
+
+円弧　半径 回転角度 長短 回転方向 終点座標
+A rx ry x-axis-rotation large-arc-flag sweep-flag x y
+a rx ry x-axis-rotation large-arc-flag sweep-flag dx dy -->
